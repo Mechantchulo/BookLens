@@ -7,6 +7,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [books, setBooks] = useState([]);
   const [errorMsg, setErrorMsg] = useState(false);
+  const [selectedBooks, setSelectedBooks] = useState([]);
 
   const onSearchChange = (e) => {
     setSearchTerm(e.target.value);

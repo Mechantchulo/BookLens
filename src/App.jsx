@@ -9,6 +9,21 @@ const App = () => {
   const [errorMsg, setErrorMsg] = useState(false);
   const [selectedBooks, setSelectedBooks] = useState([]);
 
+  const handleCompareClick = (book) => {
+    const isAlreadySelected = selectedBooks.some((b) => b.id === book.id);
+
+    if (isAlreadySelected) {
+      const updated = selectedBooks.filter((b) => b.id !== book.id);
+      setSelectedBooks(updated);
+    } else {
+      if (selectedBooks.length < 3) {
+        setSelectedBooks([...selectedBooks, book]);
+      } else {
+        alert("You can only compare upto 3 books!");
+      }
+    }
+  };
+
   const onSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };

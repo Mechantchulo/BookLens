@@ -59,7 +59,11 @@ const App = () => {
         onSearchSubmit={onSearchSubmit}
       />
 
-      <BookList books={books} />
+      <BookList
+        books={books}
+        handleCompareClick={handleCompareClick}
+        selectedBooks={selectedBooks}
+      />
     </div>
   );
 };
